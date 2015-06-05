@@ -1,0 +1,41 @@
+import scipy.integrate as spi #it provides several integration techniques including an ordinary differential equation integrator
+import numpy as np
+import matplotlib.pyplot as pl
+
+beta=1.4247 #average number of transmission from an infected person in a time period
+gamma=0.14286 #infectious rate
+I0=1e-6
+n_days=70 #number of days
+TS=1.0
+Input = (1.0-I0, I0)
+
+#v[0] number of succeptible person at time t
+#V[1] number of infected person at time t
+#beta is the average number of transmission from an infected person in a time period
+#gamma is the infectious rate
+def differentielequations(INP,t):  
+    Y=np.zeros((2))
+    V=INP    
+    Y[0]=-beta*V[0]*V[1]+gamma*V[1]
+    Y[1]=beta*V[0]*V[1]-gamma*V[1]
+    return Y   
+    
+t_start=0.0; t_end=n_days;t_inc=TS
+t_range=np.arange(t_start, t_end+t_inc, t_inc)
+result=spi.odeint(differentielequations,Input,t_range)
+
+print result
+
+#Now we will plot the SIS model (without births and deaths)
+
+pl.subplot(211)
+pl.plot(result[:,0], 'g', label='Susceptibles')
+pl.title('SIS model')
+pl.xlabel('Time in days')
+pl.ylabel('Susceptibles')
+
+pl.subplot(212)
+pl.plot(result[:,1], 'r', label='Infectious')
+pl.xlabel('Time in days')
+pl.ylabel('Infectious')
+pl.show()
