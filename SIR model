@@ -1,0 +1,41 @@
+import scipy.integrate as spi #it provides several integration techniques including an ordinary differential equation integrator
+import numpy as np
+import matplotlib.pyplot as pl
+
+beta=1.4247 #average number of transmission from an infected person in a time period
+alpha=0.14286 #recovery rate
+TS=1.0 
+n_days=50.0 #number of days
+S0=1-1e-6
+I0=1e-6
+Input=(S0,I0,0.0)
+
+#v[0] number of succeptible person at time t
+#V[1] number of infected person at time t
+#beta is the average number of transmission from an infected person in a time period
+#alpha is the recovery rate
+
+def differentielequations(Input,t):
+    Y=np.zeros((3))
+    V=Input
+    Y[0]=-beta*V[0]*V[1] 
+    Y[1]=beta *V[0]*V[1]-alpha*V[1]
+    Y[2]=alpha*V[1]
+    return Y
+    
+t_start=0.0;t_end=n_days;t_inc=TS
+t_range=np.arange(t_start,t_end+t_inc,t_inc)
+result=spi.odeint(differentielequations,Input,t_range)
+
+print result
+
+#now we will plot the SIR Model without births and deaths
+pl.plot(result[:,0],'b',label='Succeptibles')
+pl.plot(result[:,1],'r',label='Infectious')
+pl.plot(result[:,2],'g',label='Recovered')
+
+pl.title('SIR model')
+
+pl.xlabel('Time in days')
+pl.ylabel('Populations')
+pl.show()
