@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+ <!-- All my comments on the HTML script are here, it is basically always the same script -->
+    <head>
+	 <!-- utf-8 is needed to optimize the compatibility for encoding -->
+        <meta charset="utf-8" />
+		 <!-- Allow me to link my HTML script to the CSS script -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS_disease_model.css') }}">
+		 <!-- Name of my tab -->
+        <title>Simulation of epidemiological models</title>
+    </head>
+
+    <body>
+        <div id="bloc_page">
+		
+            <header>
+			 <!-- Header containing a title and a little logo made by myself -->
+                <div id="title_principal">
+                    <img src="static/pictures/earth.png" alt="Logo Spreading of Diseases" id="logo" />					
+                    <h1>Simulation of epidemiological models</h1>
+                </div>
+            </header>
+			 <!-- A nice grey separation to have a limitation between header and the rest of the site, made by myslef -->
+		<img src="static/pictures/separation.png" alt="" id="line" />
+		
+            <section>		
+                <nav>
+				 <!-- Different links, linked to the .py file, allowing me to navigate through the menu -->
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/models">The Models</a></li>
+                        <li><a href="/application">The Application</a></li>
+                        <li><a href="/contacts">Contact</a></li>
+                    </ul>
+                </nav>
+				
+                <article>
+				 <!-- Little image and title of the paragraph -->
+                    <h1><img src="static/pictures/square1.png" alt="square" class="ico_categorie" />Our Project</h1>
+					<!-- Main text part -->
+                    <p>The establishment and spread of infectious diseases is a complex phenomenon with many interacting factors, 
+					e.g., the environment with which the pathogen and hosts are situated in, the population(s) it is exposed to, 
+					and the intra- and inter-dynamics of the population it is exposed to. The role of mathematical epidemiology 
+					is to model the establishment and spread of pathogens. A predominant method of doing so, is to use the notion 
+					of abstracting the population into compartments under certain assumptions, which represent their health status 
+					with respect to the pathogen in the system. One of the cornerstone works to achieve success in this method was 
+					done by Kermack and McKendrick in the early 1900s.</p>
+                    <p>In our project, the aim is to build a computational simulation of diseases using the SIR and SIS model with Python. The
+					simulation will be run through an application especially dedicated for it. Some parameters can be modified
+					before the launch of the simulation in order to understand how the pathogens establish himself and spread in a given population.</p>
+                </article>
+
+                <aside>
+				 <!-- A little aside to add little information about us -->
+                    <h1>The Authors</h1>
+					 <!-- Importation of the CRI logo -->
+                    <p id="cri_logo"><img src="static/pictures/cri_logo.png" alt="Logo CRI Paris" /></p>
+                    <p>We are three bachelor students in the Frontières du Vivant at the CRI, Paris.</p>
+                    <p>Our level on programming is beginner and we used mostly python through the year.</p>
+					<p>This website was done using HTML and CSS, in addition with Python and Flask. It is optimized for Firefox.</p>					
+                </aside>
+				
+            </section>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS_disease_model.css') }}">
+        <!-- <link rel="stylesheet" href="CSS_disease_model.css" /> -->
+        <title>Simulation of epidemiological models</title>
+    </head>
+
+    <body>
+        <div id="bloc_page">
+		
+            <header>
+                <div id="title_principal">
+                    <img src="static/pictures/earth.png" alt="Logo Spreading of Diseases" id="logo" />					
+                    <h1>Simulation of epidemiological models</h1>
+                </div>
+            </header>
+			
+		<img src="static/pictures/separation.png" alt="" id="line" />
+		
+            <section>
+                <nav>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/models">The Models</a></li>
+                        <li><a href="/application">The Application</a></li>
+                        <li><a href="/contacts">Contact</a></li>
+                    </ul>
+                </nav>
+				
+                <article>
+                    <h1><img src="static/pictures/square1.png" alt="square" class="ico_categorie" />The models</h1>
+                    <p>We used different models to cover the propagation of a given pathogen.</p>
+                    <p><span class="SIR">THE SIR MODEL: </span> In epidemiology, the SIR model is used to study many infectious diseases such as mumps, rubella.. It is important to note that this model does not work with all  the diseases.
+					The model is also used by researchers and health officials to explain the increase and decrease in people needing medical care for a certain disease during an epidemic. 
+					One of the most basic procedures in the modelling of diseases is to use a compartmental model in which the population is divided into different groups. For the case of the SIR model, 
+					it permits to compute the amount of susceptible (S) infected (I) and recovered (R) people in a population. It is also used to explain the change in the number of people needing medical attention during an epidemic.</p>
+					<p><span class="SIS">THE SIS MODEL: </span> The SIS model can be easily derived from the SIR model by simply considering that the individuals recover with no immunity to the disease, that is, individuals are immediately 
+					susceptible once they have recovered.</p>
+                </article>
+
+                <aside>
+                    <h1>The Authors</h1>
+                    <p id="cri_logo"><img src="static/pictures/cri_logo.png" alt="Logo CRI Paris" /></p>
+                    <p>We are three bachelor students in the Frontières du Vivant at the CRI, Paris.</p>
+                    <p>Our level on programming is beginner and we used mostly python through the year.</p>
+					<p>This website was done using HTML and CSS, in addition with Python and Flask. It is optimized for Firefox.</p>					
+                </aside>
+				
+            </section>
+
+        </div>
+
+    </body>
+
+</html>
